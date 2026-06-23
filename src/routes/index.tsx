@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { User, Eye, EyeOff, X } from "lucide-react";
 
@@ -21,12 +21,18 @@ export const Route = createFileRoute("/")({
 });
 
 function LoginPage() {
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+    void navigate({ to: "/home" });
+  };
+
+  const handleDemoLogin = () => {
+    void navigate({ to: "/home" });
   };
 
   return (
@@ -101,6 +107,7 @@ function LoginPage() {
 
         <button
           type="button"
+          onClick={handleDemoLogin}
           className="h-14 w-full rounded-xl bg-[var(--gradient-button)] text-lg font-bold tracking-wide text-foreground shadow-[var(--shadow-button)] opacity-90 transition hover:opacity-100 active:scale-[0.98]"
         >
           Login with Demo ID

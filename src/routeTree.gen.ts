@@ -9,38 +9,105 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as AppRouteImport } from './routes/_app'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AppSportsRouteImport } from './routes/_app.sports'
+import { Route as AppInPlayRouteImport } from './routes/_app.in-play'
+import { Route as AppHomeRouteImport } from './routes/_app.home'
+import { Route as AppCasinoRouteImport } from './routes/_app.casino'
+import { Route as AppAccountRouteImport } from './routes/_app.account'
 
+const AppRoute = AppRouteImport.update({
+  id: '/_app',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AppSportsRoute = AppSportsRouteImport.update({
+  id: '/sports',
+  path: '/sports',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppInPlayRoute = AppInPlayRouteImport.update({
+  id: '/in-play',
+  path: '/in-play',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppHomeRoute = AppHomeRouteImport.update({
+  id: '/home',
+  path: '/home',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppCasinoRoute = AppCasinoRouteImport.update({
+  id: '/casino',
+  path: '/casino',
+  getParentRoute: () => AppRoute,
+} as any)
+const AppAccountRoute = AppAccountRouteImport.update({
+  id: '/account',
+  path: '/account',
+  getParentRoute: () => AppRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/account': typeof AppAccountRoute
+  '/casino': typeof AppCasinoRoute
+  '/home': typeof AppHomeRoute
+  '/in-play': typeof AppInPlayRoute
+  '/sports': typeof AppSportsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/account': typeof AppAccountRoute
+  '/casino': typeof AppCasinoRoute
+  '/home': typeof AppHomeRoute
+  '/in-play': typeof AppInPlayRoute
+  '/sports': typeof AppSportsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_app': typeof AppRouteWithChildren
+  '/_app/account': typeof AppAccountRoute
+  '/_app/casino': typeof AppCasinoRoute
+  '/_app/home': typeof AppHomeRoute
+  '/_app/in-play': typeof AppInPlayRoute
+  '/_app/sports': typeof AppSportsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/account' | '/casino' | '/home' | '/in-play' | '/sports'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/account' | '/casino' | '/home' | '/in-play' | '/sports'
+  id:
+    | '__root__'
+    | '/'
+    | '/_app'
+    | '/_app/account'
+    | '/_app/casino'
+    | '/_app/home'
+    | '/_app/in-play'
+    | '/_app/sports'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AppRoute: typeof AppRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/_app': {
+      id: '/_app'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AppRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,11 +115,65 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_app/sports': {
+      id: '/_app/sports'
+      path: '/sports'
+      fullPath: '/sports'
+      preLoaderRoute: typeof AppSportsRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/in-play': {
+      id: '/_app/in-play'
+      path: '/in-play'
+      fullPath: '/in-play'
+      preLoaderRoute: typeof AppInPlayRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/home': {
+      id: '/_app/home'
+      path: '/home'
+      fullPath: '/home'
+      preLoaderRoute: typeof AppHomeRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/casino': {
+      id: '/_app/casino'
+      path: '/casino'
+      fullPath: '/casino'
+      preLoaderRoute: typeof AppCasinoRouteImport
+      parentRoute: typeof AppRoute
+    }
+    '/_app/account': {
+      id: '/_app/account'
+      path: '/account'
+      fullPath: '/account'
+      preLoaderRoute: typeof AppAccountRouteImport
+      parentRoute: typeof AppRoute
+    }
   }
 }
 
+interface AppRouteChildren {
+  AppAccountRoute: typeof AppAccountRoute
+  AppCasinoRoute: typeof AppCasinoRoute
+  AppHomeRoute: typeof AppHomeRoute
+  AppInPlayRoute: typeof AppInPlayRoute
+  AppSportsRoute: typeof AppSportsRoute
+}
+
+const AppRouteChildren: AppRouteChildren = {
+  AppAccountRoute: AppAccountRoute,
+  AppCasinoRoute: AppCasinoRoute,
+  AppHomeRoute: AppHomeRoute,
+  AppInPlayRoute: AppInPlayRoute,
+  AppSportsRoute: AppSportsRoute,
+}
+
+const AppRouteWithChildren = AppRoute._addFileChildren(AppRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AppRoute: AppRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
