@@ -22,7 +22,7 @@ function AppLayout() {
         <Outlet />
       </main>
 
-      <nav className="fixed bottom-0 left-0 right-0 z-30 border-t border-white/10 bg-[oklch(0.22_0.04_170)]/95 backdrop-blur-md">
+      <nav className="fixed bottom-0 left-0 right-0 z-30 border-t border-foreground/10 bg-[var(--nav-surface)] backdrop-blur-md">
         <div className="mx-auto grid h-20 max-w-md grid-cols-5 items-center px-2">
           <NavLink to="/home" label="Home" icon={<Home className="h-6 w-6" />} />
           <NavLink to="/in-play" label="In-Play" icon={<Timer className="h-6 w-6" />} />
@@ -52,8 +52,8 @@ function NavLink({
       to={to}
       className={`flex flex-col items-center justify-center gap-1 rounded-xl py-2 text-[11px] font-medium transition ${
         active
-          ? "bg-white/15 text-white"
-          : "text-white/60 hover:text-white"
+          ? "bg-foreground/15 text-foreground"
+          : "text-foreground/60 hover:text-foreground"
       }`}
     >
       {icon}
