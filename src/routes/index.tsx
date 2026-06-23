@@ -39,7 +39,14 @@ function LoginPage() {
         <X className="h-6 w-6" strokeWidth={3} />
       </button>
 
-      <div className="mt-24 mb-10 select-none">
+      <h2
+        className="absolute top-6 left-1/2 -translate-x-1/2 select-none bg-[var(--gradient-gold)] bg-clip-text text-3xl tracking-wide text-transparent drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]"
+        style={{ fontFamily: "var(--font-display)" }}
+      >
+        King
+      </h2>
+
+      <div className="mt-28 mb-10 select-none">
         <h1
           className="bg-[var(--gradient-gold)] bg-clip-text text-7xl tracking-wide text-transparent drop-shadow-[0_4px_8px_rgba(0,0,0,0.4)]"
           style={{ fontFamily: "var(--font-display)" }}
