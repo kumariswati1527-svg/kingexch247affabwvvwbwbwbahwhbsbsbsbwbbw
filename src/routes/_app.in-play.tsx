@@ -1,4 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
+import cricketImg from "@/assets/cricket.jpg";
+import footballImg from "@/assets/football.jpg";
+import tennisImg from "@/assets/tennis.jpg";
+
+const matchImg: Record<string, string> = {
+  Cricket: cricketImg,
+  Football: footballImg,
+  Tennis: tennisImg,
+};
 
 export const Route = createFileRoute("/_app/in-play")({
   head: () => ({
@@ -23,11 +32,19 @@ function InPlayPage() {
       {matches.map((m) => (
         <div
           key={m.id}
-          className="flex items-center justify-between rounded-xl bg-white/10 p-4 shadow"
+          className="flex items-center gap-3 rounded-xl bg-white/10 p-3 shadow"
         >
-          <div>
+          <img
+            src={matchImg[m.sport]}
+            alt={m.sport}
+            width={512}
+            height={512}
+            loading="lazy"
+            className="h-10 w-10 rounded-lg object-cover"
+          />
+          <div className="flex-1">
             <div className="text-sm font-semibold text-foreground">{m.teams}</div>
-            <div className="mt-1 text-xs text-foreground/70">{m.sport}</div>
+            <div className="mt-0.5 text-xs text-foreground/70">{m.sport}</div>
           </div>
           <span className="rounded-full bg-red-500/20 px-2 py-1 text-[10px] font-bold text-red-300">
             LIVE
