@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { User, Wallet, History, Settings, LogOut } from "lucide-react";
+import { Wallet, History, Settings, LogOut } from "lucide-react";
+import avatarImg from "@/assets/avatar.jpg";
 
 export const Route = createFileRoute("/_app/account")({
   head: () => ({
@@ -15,9 +16,14 @@ function AccountPage() {
   return (
     <div className="space-y-6">
       <div className="flex items-center gap-4 rounded-2xl bg-white/10 p-5 shadow">
-        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-[var(--gradient-button)] text-foreground shadow">
-          <User className="h-7 w-7" />
-        </div>
+        <img
+          src={avatarImg}
+          alt="Demo Player"
+          width={512}
+          height={512}
+          loading="lazy"
+          className="h-14 w-14 rounded-full object-cover shadow"
+        />
         <div>
           <div className="text-lg font-bold text-foreground">Demo Player</div>
           <div className="text-xs text-foreground/70">@demo_king</div>
