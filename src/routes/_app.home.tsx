@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import homeRef from "@/assets/home-ref.jpg.asset.json";
-import homeGames from "@/assets/home-games.png.asset.json";
+import homeGames from "@/assets/home-games-v2.jpg.asset.json";
 
 export const Route = createFileRoute("/_app/home")({
   head: () => ({
