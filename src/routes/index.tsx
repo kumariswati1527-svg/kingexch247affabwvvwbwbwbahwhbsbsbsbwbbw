@@ -54,7 +54,7 @@ function LoginPage() {
           className="text-8xl leading-none tracking-normal drop-shadow-[0_4px_10px_rgba(0,0,0,0.45)]"
           style={{
             fontFamily: "var(--font-display)",
-            backgroundImage: "var(--gradient-gold)",
+            backgroundImage: "linear-gradient(180deg, #facc15 0%, #f59e0b 50%, #b45309 100%)",
             WebkitBackgroundClip: "text",
             backgroundClip: "text",
             color: "transparent",
