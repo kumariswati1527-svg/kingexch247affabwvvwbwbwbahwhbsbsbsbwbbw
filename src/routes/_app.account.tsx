@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Wallet, History, Settings, LogOut } from "lucide-react";
-import avatarImg from "@/assets/avatar.jpg";
+import { User, ChevronRight, LogOut } from "lucide-react";
 
 export const Route = createFileRoute("/_app/account")({
   head: () => ({
@@ -12,47 +11,51 @@ export const Route = createFileRoute("/_app/account")({
   component: AccountPage,
 });
 
+const menuItems = [
+  "My Profile",
+  "Multi Markets",
+  "Rolling Commission",
+  "Account Statement",
+  "Bets History",
+  "Profit & Loss",
+  "Password History",
+  "Activity Log",
+];
+
 function AccountPage() {
   return (
-    <div className="space-y-6">
-      <div className="flex items-center gap-4 rounded-2xl bg-white/10 p-5 shadow">
-        <img
-          src={avatarImg}
-          alt="Demo Player"
-          width={512}
-          height={512}
-          loading="lazy"
-          className="h-14 w-14 rounded-full object-cover shadow"
-        />
-        <div>
-          <div className="text-lg font-bold text-foreground">Demo Player</div>
-          <div className="text-xs text-foreground/70">@demo_king</div>
-        </div>
+    <div className="space-y-4">
+      {/* Exchange user bar */}
+      <div className="flex items-center gap-2 rounded-md bg-[#1e3a4d] px-4 py-2.5 text-sm font-medium text-white">
+        <User className="h-5 w-5" />
+        <span>exchange</span>
       </div>
 
-      <div className="grid gap-3">
-        <MenuRow icon={<Wallet className="h-5 w-5" />} label="Wallet" />
-        <MenuRow icon={<History className="h-5 w-5" />} label="History" />
-        <MenuRow icon={<Settings className="h-5 w-5" />} label="Settings" />
+      {/* Menu list */}
+      <div className="overflow-hidden rounded-lg bg-white">
+        {menuItems.map((label, index) => (
+          <div
+            key={label}
+            className={`flex items-center justify-between px-4 py-3.5 ${
+              index !== menuItems.length - 1 ? "border-b border-gray-100" : ""
+            }`}
+          >
+            <span className="text-sm font-semibold text-blue-600">{label}</span>
+            <div className="flex h-6 w-6 items-center justify-center rounded border border-gray-300 text-gray-600">
+              <ChevronRight className="h-4 w-4" />
+            </div>
+          </div>
+        ))}
       </div>
 
+      {/* Logout button */}
       <Link
         to="/"
-        className="flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--gradient-button)] py-4 text-sm font-bold text-foreground shadow-[var(--shadow-button)] transition active:scale-[0.98]"
+        className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#d32f2f] py-3.5 text-sm font-bold uppercase tracking-wide text-white shadow transition active:scale-[0.98]"
       >
-        <LogOut className="h-5 w-5" />
         Logout
+        <LogOut className="h-4 w-4" />
       </Link>
-    </div>
-  );
-}
-
-function MenuRow({ icon, label }: { icon: React.ReactNode; label: string }) {
-  return (
-    <div className="flex items-center gap-3 rounded-xl bg-white/10 px-4 py-3 text-sm font-semibold text-foreground shadow">
-      {icon}
-      <span className="flex-1">{label}</span>
-      <span className="text-foreground/50">›</span>
     </div>
   );
 }
