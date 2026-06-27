@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import homeRef from "@/assets/home-ref.jpg.asset.json";
+import homeTabs from "@/assets/home-tabs.jpg.asset.json";
 import homeGames from "@/assets/home-games-latest.jpg.asset.json";
 import moreGames from "@/assets/more-games.jpg.asset.json";
 
@@ -22,6 +23,15 @@ function HomePage() {
         width={640}
         height={1136}
         loading="eager"
+        className="block h-auto w-full"
+      />
+
+      <img
+        src={homeTabs.url}
+        alt="Popular Universe Live Universe Original"
+        width={1080}
+        height={192}
+        loading="lazy"
         className="block h-auto w-full"
       />
 
