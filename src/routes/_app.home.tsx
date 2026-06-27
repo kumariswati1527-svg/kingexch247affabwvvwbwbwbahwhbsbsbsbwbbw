@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import homeRef from "@/assets/home-ref.jpg.asset.json";
 import homeGames from "@/assets/home-games-latest.jpg.asset.json";
+import moreGames from "@/assets/more-games.jpg.asset.json";
 
 export const Route = createFileRoute("/_app/home")({
   head: () => ({
@@ -32,6 +33,16 @@ function HomePage() {
         loading="lazy"
         className="block h-auto w-full"
       />
+
+      <img
+        src={moreGames.url}
+        alt="More games"
+        width={1080}
+        height={1920}
+        loading="lazy"
+        className="block h-auto w-full"
+      />
     </div>
   );
 }
+
