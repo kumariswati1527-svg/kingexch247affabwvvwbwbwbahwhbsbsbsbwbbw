@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import homeRef from "@/assets/home-ref.jpg.asset.json";
+import homeTabs from "@/assets/home-tabs.jpg.asset.json";
 import homeGames from "@/assets/home-games-latest.jpg.asset.json";
 import moreGames from "@/assets/more-games.jpg.asset.json";
 
