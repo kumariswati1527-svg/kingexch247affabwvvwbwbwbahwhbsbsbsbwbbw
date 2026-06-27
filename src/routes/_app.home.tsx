@@ -27,6 +27,15 @@ function HomePage() {
       />
 
       <img
+        src={homeTabs.url}
+        alt="Popular Universe Live Universe Original"
+        width={1080}
+        height={192}
+        loading="lazy"
+        className="block h-auto w-full"
+      />
+
+      <img
         src={homeGames.url}
         alt="Game cards"
         width={1080}
