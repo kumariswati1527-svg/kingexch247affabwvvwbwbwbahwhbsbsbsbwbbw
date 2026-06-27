@@ -25,11 +25,11 @@ function CasinoPage() {
         <X className="h-8 w-8" strokeWidth={3} />
       </button>
 
-      <div className="h-[50vh] w-full overflow-hidden rounded-t-2xl bg-black">
+      <div className="flex h-[50vh] w-full flex-col justify-end overflow-hidden rounded-t-2xl bg-black">
         <img
           src={casinoLobby.url}
           alt="Casino lobby"
-          className="h-full w-full object-cover object-top"
+          className="h-full w-full object-contain"
         />
       </div>
     </div>
