@@ -87,8 +87,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "Lovable App" },
       { name: "twitter:description", content: "King's Login Portal is a secure authentication gateway for a gaming website." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e9e1262e-4e46-4bbd-9dee-a2a035a27fb5/id-preview-5c167504--d9310166-1e2c-4d70-8dc5-c69dbad27ff1.lovable.app-1782527062565.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/e9e1262e-4e46-4bbd-9dee-a2a035a27fb5/id-preview-5c167504--d9310166-1e2c-4d70-8dc5-c69dbad27ff1.lovable.app-1782527062565.png" },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/69b7d816-17e2-49d3-a06f-e5339468afa5/id-preview-91aca085--d9310166-1e2c-4d70-8dc5-c69dbad27ff1.lovable.app-1782625572252.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/69b7d816-17e2-49d3-a06f-e5339468afa5/id-preview-91aca085--d9310166-1e2c-4d70-8dc5-c69dbad27ff1.lovable.app-1782625572252.png" },
     ],
     links: [
       {
