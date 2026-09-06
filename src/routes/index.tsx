@@ -40,7 +40,7 @@ function LoginPage() {
   };
 
   return (
-    <main className="relative flex min-h-screen flex-col items-center px-6 pt-6 pb-12">
+    <main className="relative flex min-h-screen flex-col items-center px-6 pt-6 pb-12 md:justify-center">
       <button
         type="button"
         aria-label="Close"
@@ -49,7 +49,7 @@ function LoginPage() {
         <X className="h-6 w-6" strokeWidth={3} />
       </button>
 
-      <div className="mt-32 mb-14 select-none text-center">
+      <div className="mt-32 mb-14 select-none text-center md:mt-0">
         <h1
           className="text-8xl leading-none tracking-normal drop-shadow-[0_4px_10px_rgba(0,0,0,0.45)]"
           style={{
