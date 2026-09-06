@@ -16,16 +16,27 @@ function CasinoPage() {
   const navigate = useNavigate();
 
   return (
-    <div className="fixed inset-0 z-40 flex flex-col justify-end bg-black/70">
+    <div
+      className="fixed inset-0 z-40 flex flex-col justify-end bg-black/70"
+      onClick={() => navigate({ to: "/home" })}
+      role="button"
+      aria-label="Close casino"
+    >
       <button
-        onClick={() => navigate({ to: "/home" })}
+        onClick={(e) => {
+          e.stopPropagation();
+          navigate({ to: "/home" });
+        }}
         className="absolute right-4 top-4 z-50 flex h-10 w-10 items-center justify-center rounded-full text-red-500"
         aria-label="Close casino"
       >
         <X className="h-8 w-8" strokeWidth={3} />
       </button>
 
-      <div className="flex h-[50vh] w-full flex-col justify-end overflow-hidden rounded-t-2xl bg-black">
+      <div
+        className="flex h-[50vh] w-full flex-col justify-end overflow-hidden rounded-t-2xl bg-black"
+        onClick={(e) => e.stopPropagation()}
+      >
         <img
           src={casinoLobby.url}
           alt="Casino lobby"
