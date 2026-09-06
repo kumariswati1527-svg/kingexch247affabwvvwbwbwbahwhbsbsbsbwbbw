@@ -34,7 +34,7 @@ function CasinoPage() {
       </button>
 
       <div
-        className="flex h-[50vh] w-full flex-col justify-end overflow-hidden rounded-t-2xl bg-black"
+        className="flex h-[50vh] w-full flex-col justify-end overflow-hidden rounded-t-2xl bg-black md:mx-auto md:mb-0 md:max-w-3xl md:rounded-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         <img

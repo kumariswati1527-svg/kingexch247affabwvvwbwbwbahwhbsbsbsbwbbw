@@ -9,25 +9,35 @@ export const Route = createFileRoute("/_app")({
 function AppLayout() {
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="sticky top-0 z-20 flex h-16 items-center justify-center px-4">
+      <header className="sticky top-0 z-20 flex h-16 items-center justify-center px-4 md:justify-between md:px-8">
         <h1
-          className="bg-[image:var(--gradient-gold)] bg-clip-text text-3xl tracking-wide text-transparent drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]"
+          className="bg-[image:var(--gradient-gold)] bg-clip-text text-3xl tracking-wide text-transparent drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)] md:text-4xl"
           style={{ fontFamily: "var(--font-display)" }}
         >
           King
         </h1>
+
+        {/* Desktop top navigation (hidden on mobile) */}
+        <nav className="hidden items-center gap-2 md:flex">
+          <TopNavLink to="/home" label="Home" icon={<Home className="h-5 w-5" />} />
+          <TopNavLink to="/in-play" label="In-Play" icon={<Timer className="h-5 w-5" />} />
+          <TopNavLink to="/sports" label="Sports" icon={<Trophy className="h-5 w-5" />} />
+          <TopNavLink to="/casino" label="Casino" icon={<CasinoChipIcon className="h-5 w-5" />} />
+          <TopNavLink to="/account" label="Account" icon={<UserCircle className="h-5 w-5" />} />
+        </nav>
       </header>
 
-      <main className="flex-1 px-4 py-6 pb-28">
+      <main className="flex-1 px-4 py-6 pb-28 md:mx-auto md:w-full md:max-w-5xl md:px-8 md:pb-10">
         <Outlet />
       </main>
 
-      <nav className="fixed bottom-0 left-0 right-0 z-30 border-t border-foreground/10 bg-[var(--nav-surface)] backdrop-blur-md">
+      {/* Mobile bottom navigation (hidden on desktop) */}
+      <nav className="fixed bottom-0 left-0 right-0 z-30 border-t border-foreground/10 bg-[var(--nav-surface)] backdrop-blur-md md:hidden">
         <div className="mx-auto grid h-20 max-w-md grid-cols-5 items-center px-2">
           <NavLink to="/home" label="Home" icon={<Home className="h-6 w-6" />} />
           <NavLink to="/in-play" label="In-Play" icon={<Timer className="h-6 w-6" />} />
           <NavLink to="/sports" label="Sports" icon={<Trophy className="h-6 w-6" />} />
-          <NavLink to="/casino" label="Casino" icon={<CasinoChipIcon />} />
+          <NavLink to="/casino" label="Casino" icon={<CasinoChipIcon className="h-6 w-6" />} />
           <NavLink to="/account" label="Account" icon={<UserCircle className="h-6 w-6" />} />
         </div>
       </nav>
@@ -62,7 +72,34 @@ function NavLink({
   );
 }
 
-function CasinoChipIcon() {
+function TopNavLink({
+  to,
+  label,
+  icon,
+}: {
+  to: string;
+  label: string;
+  icon: ReactNode;
+}) {
+  const pathname = useRouterState({ select: (s) => s.location.pathname });
+  const active = pathname === to;
+
+  return (
+    <Link
+      to={to}
+      className={`flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold transition ${
+        active
+          ? "bg-foreground/15 text-foreground"
+          : "text-foreground/60 hover:bg-foreground/10 hover:text-foreground"
+      }`}
+    >
+      {icon}
+      <span>{label}</span>
+    </Link>
+  );
+}
+
+function CasinoChipIcon({ className = "h-6 w-6" }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -71,7 +108,7 @@ function CasinoChipIcon() {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="h-6 w-6"
+      className={className}
     >
       <circle cx="12" cy="12" r="10" />
       <circle cx="12" cy="12" r="4" />
