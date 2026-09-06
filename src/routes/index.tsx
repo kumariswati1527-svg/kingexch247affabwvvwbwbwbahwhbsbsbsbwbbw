@@ -10,12 +10,6 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: "King — Login" },
       { property: "og:description", content: "Login to King gaming." },
     ],
-    links: [
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;500;600;700&display=swap",
-      },
-    ],
   }),
   component: LoginPage,
 });
