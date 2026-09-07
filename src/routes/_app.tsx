@@ -8,9 +8,12 @@ export const Route = createFileRoute("/_app")({
 });
 
 function AppLayout() {
+  const pathname = useRouterState({ select: (state) => state.location.pathname });
+  const usesGameGallery = pathname === "/home" || pathname === "/in-play";
+
   return (
-    <div className="flex min-h-screen flex-col">
-      <header className="sticky top-0 z-20 flex h-16 items-center justify-center px-4 md:justify-between md:px-8">
+    <div className={`flex min-h-screen flex-col ${usesGameGallery ? "game-gallery-shell" : ""}`}>
+      <header className={`sticky top-0 z-20 flex h-16 items-center justify-center px-4 md:justify-between md:px-8 ${usesGameGallery ? "game-gallery-header" : ""}`}>
         <Link to="/home" aria-label="King home">
           <img
             src={kingLogo.url}
@@ -29,7 +32,7 @@ function AppLayout() {
         </nav>
       </header>
 
-      <main className="flex-1 px-4 py-6 pb-28 md:mx-auto md:w-full md:max-w-5xl md:px-8 md:pb-10">
+      <main className={`flex-1 pb-28 md:mx-auto md:w-full md:pb-10 ${usesGameGallery ? "game-gallery-main" : "px-4 py-6 md:max-w-5xl md:px-8"}`}>
         <Outlet />
       </main>
 

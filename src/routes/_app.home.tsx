@@ -16,14 +16,14 @@ export const Route = createFileRoute("/_app/home")({
 
 function HomePage() {
   return (
-    <div className="-mx-4 -my-6 flex flex-col">
+    <div className="game-gallery-page">
       <img
         src={homeRef.url}
         alt="Home"
         width={640}
         height={1136}
         loading="eager"
-        className="block h-auto w-full"
+        className="game-gallery-image block h-auto w-full"
       />
 
       <img
@@ -32,7 +32,7 @@ function HomePage() {
         width={1080}
         height={192}
         loading="lazy"
-        className="block h-auto w-full"
+        className="game-gallery-image block h-auto w-full"
       />
 
       <img
@@ -41,7 +41,7 @@ function HomePage() {
         width={1080}
         height={1920}
         loading="lazy"
-        className="block h-auto w-full"
+        className="game-gallery-image block h-auto w-full"
       />
 
       <img
@@ -50,7 +50,7 @@ function HomePage() {
         width={1080}
         height={1920}
         loading="lazy"
-        className="block h-auto w-full"
+        className="game-gallery-image block h-auto w-full"
       />
     </div>
   );
