@@ -24,6 +24,7 @@
   --gold-deep: oklch(0.7 0.18 60);
 
   --nav-surface: oklch(0.22 0.04 170 / 0.95);
+  --game-pattern: url("/__l5e/assets-v1/7a192d42-a735-4e8e-a0fe-eadc087137a3/king-game-pattern.jpg");
 
   --gradient-bg: linear-gradient(
     180deg,
@@ -55,6 +56,36 @@
     inset 0 -2px 4px oklch(0.15 0.05 165 / 0.4);
   --shadow-input: 0 2px 8px oklch(0.15 0.05 165 / 0.3);
   --shadow-close: 0 2px 8px oklch(0.15 0.05 165 / 0.4);
+}
+
+.game-gallery-shell {
+  background-color: oklch(0.965 0.006 220);
+  background-image: var(--game-pattern);
+  background-repeat: repeat;
+  background-size: 350px 265px;
+}
+
+.game-gallery-header {
+  background: oklch(0.39 0.11 166 / 0.96);
+  box-shadow: 0 2px 8px oklch(0.18 0.035 165 / 0.25);
+}
+
+.game-gallery-main {
+  max-width: 640px;
+}
+
+.game-gallery-page {
+  display: flex;
+  min-height: calc(100vh - 4rem);
+  flex-direction: column;
+  background-color: oklch(0.965 0.006 220);
+  background-image: var(--game-pattern);
+  background-repeat: repeat;
+  background-size: 350px 265px;
+}
+
+.game-gallery-image {
+  mix-blend-mode: normal;
 }
 
 @layer base {

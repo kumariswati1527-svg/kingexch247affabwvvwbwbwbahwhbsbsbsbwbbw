@@ -15,14 +15,14 @@ export const Route = createFileRoute("/_app/in-play")({
 
 function InPlayPage() {
   return (
-    <div className="-mx-4 -my-6 flex flex-col">
+    <div className="game-gallery-page">
       <img
         src={inPlayImg.url}
         alt="In-Play events"
         width={1080}
         height={1920}
         loading="eager"
-        className="block h-auto w-full"
+        className="game-gallery-image block h-auto w-full"
       />
 
       <img
@@ -31,7 +31,7 @@ function InPlayPage() {
         width={1080}
         height={1920}
         loading="lazy"
-        className="block h-auto w-full"
+        className="game-gallery-image block h-auto w-full"
       />
 
       <img
@@ -40,7 +40,7 @@ function InPlayPage() {
         width={1080}
         height={1920}
         loading="lazy"
-        className="block h-auto w-full"
+        className="game-gallery-image block h-auto w-full"
       />
     </div>
   );
