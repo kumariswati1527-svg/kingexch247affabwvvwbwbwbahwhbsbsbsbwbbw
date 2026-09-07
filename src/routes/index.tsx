@@ -1,6 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { User, Eye, EyeOff, X } from "lucide-react";
+import kingLogo from "../assets/king-logo.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -44,19 +45,11 @@ function LoginPage() {
       </button>
 
       <div className="mt-32 mb-14 select-none text-center md:mt-0">
-        <h1
-          className="text-8xl leading-none tracking-normal drop-shadow-[0_4px_10px_rgba(0,0,0,0.45)]"
-          style={{
-            fontFamily: "var(--font-display)",
-            backgroundImage: "linear-gradient(180deg, #facc15 0%, #f59e0b 50%, #b45309 100%)",
-            WebkitBackgroundClip: "text",
-            backgroundClip: "text",
-            color: "transparent",
-            WebkitTextFillColor: "transparent",
-          }}
-        >
-          King
-        </h1>
+        <img
+          src={kingLogo.url}
+          alt="King"
+          className="mx-auto w-64 drop-shadow-[0_4px_10px_rgba(0,0,0,0.45)] md:w-72"
+        />
       </div>
 
       <form

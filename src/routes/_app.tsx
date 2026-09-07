@@ -1,6 +1,7 @@
 import { createFileRoute, Outlet, Link, useRouterState } from "@tanstack/react-router";
 import { Home, Timer, Trophy, UserCircle } from "lucide-react";
 import type { ReactNode } from "react";
+import kingLogo from "../assets/king-logo.png.asset.json";
 
 export const Route = createFileRoute("/_app")({
   component: AppLayout,
@@ -10,19 +11,13 @@ function AppLayout() {
   return (
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-20 flex h-16 items-center justify-center px-4 md:justify-between md:px-8">
-        <h1
-          className="text-4xl leading-none tracking-normal drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)] md:text-5xl"
-          style={{
-            fontFamily: "var(--font-display)",
-            backgroundImage: "linear-gradient(180deg, #facc15 0%, #f59e0b 50%, #b45309 100%)",
-            WebkitBackgroundClip: "text",
-            backgroundClip: "text",
-            color: "transparent",
-            WebkitTextFillColor: "transparent",
-          }}
-        >
-          King
-        </h1>
+        <Link to="/home" aria-label="King home">
+          <img
+            src={kingLogo.url}
+            alt="King"
+            className="h-10 w-auto drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)] md:h-12"
+          />
+        </Link>
 
         {/* Desktop top navigation (hidden on mobile) */}
         <nav className="hidden items-center gap-2 md:flex">
