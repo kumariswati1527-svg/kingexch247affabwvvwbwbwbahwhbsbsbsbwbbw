@@ -3,6 +3,7 @@ import homeRef from "@/assets/home-ref.jpg.asset.json";
 import homeTabs from "@/assets/home-tabs.jpg.asset.json";
 import homeGames from "@/assets/home-games-white.jpg";
 import moreGames from "@/assets/more-games.jpg.asset.json";
+import extraGames from "@/assets/extra-games.jpg.asset.json";
 
 export const Route = createFileRoute("/_app/home")({
   head: () => ({
@@ -49,6 +50,15 @@ function HomePage() {
         alt="More games"
         width={1080}
         height={1920}
+        loading="lazy"
+        className="game-gallery-image block h-auto w-full"
+      />
+
+      <img
+        src={extraGames.url}
+        alt="Dream Catcher and Lucky 0 to 9 games"
+        width={362}
+        height={247}
         loading="lazy"
         className="game-gallery-image block h-auto w-full"
       />
