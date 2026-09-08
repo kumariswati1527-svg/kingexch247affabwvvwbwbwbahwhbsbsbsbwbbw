@@ -26,7 +26,7 @@ function InPlayPage() {
       />
 
       <img
-        src={homeGames.url}
+        src={homeGames}
         alt="Game cards"
         width={1080}
         height={1920}
