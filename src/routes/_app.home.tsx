@@ -53,6 +53,15 @@ function HomePage() {
         loading="lazy"
         className="game-gallery-image block h-auto w-full"
       />
+
+      <img
+        src={extraGames.url}
+        alt="Dream Catcher and Lucky 0 to 9 games"
+        width={362}
+        height={247}
+        loading="lazy"
+        className="game-gallery-image block h-auto w-full"
+      />
     </div>
   );
 }
