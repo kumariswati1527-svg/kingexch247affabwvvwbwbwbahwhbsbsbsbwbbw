@@ -98,7 +98,7 @@ function TopNavLink({
   return (
     <Link
       to={to}
-      className={`flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold transition ${
+      className={`flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-xl px-2.5 py-2 text-xs font-semibold transition ${
         active
           ? "bg-foreground/15 text-foreground"
           : "text-foreground/60 hover:bg-foreground/10 hover:text-foreground"
