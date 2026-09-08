@@ -13,23 +13,29 @@ function AppLayout() {
 
   return (
     <div className={`flex min-h-screen flex-col ${usesGameGallery ? "game-gallery-shell" : ""}`}>
-      <header className={`sticky top-0 z-20 flex h-16 items-center justify-center px-4 md:justify-between md:px-8 ${usesGameGallery ? "game-gallery-header" : ""}`}>
-        <Link to="/home" aria-label="King home">
-          <img
-            src={kingLogo.url}
-            alt="King"
-            className="h-10 w-auto drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)] md:h-12"
-          />
-        </Link>
+      <header className={`sticky top-0 z-20 ${usesGameGallery ? "game-gallery-header" : ""}`}>
+        <div
+          className={`mx-auto flex h-16 w-full items-center justify-center px-4 md:justify-between ${
+            usesGameGallery ? "md:max-w-[640px] md:px-0" : "md:max-w-5xl md:px-8"
+          }`}
+        >
+          <Link to="/home" aria-label="King home">
+            <img
+              src={kingLogo.url}
+              alt="King"
+              className="h-10 w-auto drop-shadow-[0_2px_6px_rgba(0,0,0,0.45)] md:h-12"
+            />
+          </Link>
 
-        {/* Desktop top navigation (hidden on mobile) */}
-        <nav className="hidden items-center gap-2 md:flex">
-          <TopNavLink to="/home" label="Home" icon={<Home className="h-5 w-5" />} />
-          <TopNavLink to="/in-play" label="In-Play" icon={<Timer className="h-5 w-5" />} />
-          <TopNavLink to="/sports" label="Sports" icon={<Trophy className="h-5 w-5" />} />
-          <TopNavLink to="/casino" label="Casino" icon={<CasinoChipIcon className="h-5 w-5" />} />
-          <TopNavLink to="/account" label="Account" icon={<UserCircle className="h-5 w-5" />} />
-        </nav>
+          {/* Desktop top navigation (hidden on mobile) */}
+          <nav className="hidden items-center gap-2 md:flex">
+            <TopNavLink to="/home" label="Home" icon={<Home className="h-5 w-5" />} />
+            <TopNavLink to="/in-play" label="In-Play" icon={<Timer className="h-5 w-5" />} />
+            <TopNavLink to="/sports" label="Sports" icon={<Trophy className="h-5 w-5" />} />
+            <TopNavLink to="/casino" label="Casino" icon={<CasinoChipIcon className="h-5 w-5" />} />
+            <TopNavLink to="/account" label="Account" icon={<UserCircle className="h-5 w-5" />} />
+          </nav>
+        </div>
       </header>
 
       <main className={`flex-1 pb-28 md:mx-auto md:w-full md:pb-10 ${usesGameGallery ? "game-gallery-main" : "px-4 py-6 md:max-w-5xl md:px-8"}`}>
@@ -92,7 +98,7 @@ function TopNavLink({
   return (
     <Link
       to={to}
-      className={`flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold transition ${
+      className={`flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-xl px-2.5 py-2 text-xs font-semibold transition ${
         active
           ? "bg-foreground/15 text-foreground"
           : "text-foreground/60 hover:bg-foreground/10 hover:text-foreground"

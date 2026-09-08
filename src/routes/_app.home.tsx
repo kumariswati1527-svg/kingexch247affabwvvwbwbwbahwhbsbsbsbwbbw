@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import homeRef from "@/assets/home-ref.jpg.asset.json";
 import homeTabs from "@/assets/home-tabs.jpg.asset.json";
-import homeGames from "@/assets/home-games-latest.jpg.asset.json";
+import homeGames from "@/assets/home-games-white.jpg";
 import moreGames from "@/assets/more-games.jpg.asset.json";
 
 export const Route = createFileRoute("/_app/home")({
@@ -36,7 +36,7 @@ function HomePage() {
       />
 
       <img
-        src={homeGames.url}
+        src={homeGames}
         alt="Game cards"
         width={1080}
         height={1920}

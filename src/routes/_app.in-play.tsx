@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import inPlayImg from "@/assets/in-play.jpg.asset.json";
-import homeGames from "@/assets/home-games-latest.jpg.asset.json";
+import homeGames from "@/assets/home-games-white.jpg";
 import moreGames from "@/assets/more-games.jpg.asset.json";
 
 export const Route = createFileRoute("/_app/in-play")({
@@ -26,7 +26,7 @@ function InPlayPage() {
       />
 
       <img
-        src={homeGames.url}
+        src={homeGames}
         alt="Game cards"
         width={1080}
         height={1920}
