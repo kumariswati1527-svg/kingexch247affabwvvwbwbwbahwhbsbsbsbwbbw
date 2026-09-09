@@ -40,7 +40,18 @@ export function GameTabs({ popular }: { popular: ReactNode }) {
         ))}
       </div>
 
-      {active === "universe-live" ? (
+      {active === "universe-original" ? (
+        <div>
+          <img
+            src={universeOriginal.url}
+            alt="Universe Original games — Vimaan, Balloon, Heads & Tails, Dream Catcher, Lucky 0 to 9"
+            width={576}
+            height={526}
+            loading="lazy"
+            className="game-gallery-image block h-auto w-full"
+          />
+        </div>
+      ) : active === "universe-live" ? (
         <div>
           <img
             src={universeLive1.url}
