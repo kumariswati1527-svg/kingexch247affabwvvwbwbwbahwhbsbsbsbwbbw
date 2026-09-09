@@ -44,7 +44,7 @@ export function GameTabs({ popular }: { popular: ReactNode }) {
             src={universeLive1.url}
             alt="Universe Live games — 20-20 Teenpatti, Lucky 7, 1 Day Teenpatti, Joker Teenpatti, Dragon Tiger, Baccarat, Andar Bahar, 32 Cards, Poker"
             width={576}
-            height={839}
+            height={773}
             loading="lazy"
             className="game-gallery-image block h-auto w-full"
           />
