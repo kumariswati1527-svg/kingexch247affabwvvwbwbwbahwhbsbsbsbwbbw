@@ -1,6 +1,8 @@
 import { useState, type ReactNode } from "react";
 import universeLive1 from "@/assets/universe-live-1.jpg.asset.json";
 import universeLive2 from "@/assets/universe-live-2.jpg.asset.json";
+import universeOriginal from "@/assets/universe-original.jpg.asset.json";
+
 
 type TabId = "popular" | "universe-live" | "universe-original";
 
