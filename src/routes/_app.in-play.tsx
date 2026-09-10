@@ -17,7 +17,7 @@ function InPlayPage() {
   return (
     <div className="game-gallery-page">
       <img
-        src={inPlayImg.url}
+        src={inPlayImg}
         alt="In-Play events"
         width={1080}
         height={1920}
