@@ -19,27 +19,31 @@ function InPlayPage() {
       <img
         src={inPlayImg}
         alt="In-Play events"
-        width={1080}
-        height={1920}
+        width={1152}
+        height={1220}
         loading="eager"
+        decoding="async"
+        fetchPriority="high"
         className="game-gallery-image block h-auto w-full"
       />
 
       <img
         src={homeGames}
         alt="Game cards"
-        width={1080}
-        height={1920}
-        loading="lazy"
+        width={1536}
+        height={2752}
+        loading="eager"
+        decoding="async"
         className="game-gallery-image block h-auto w-full"
       />
 
       <img
         src={moreGames.url}
         alt="More games"
-        width={1080}
-        height={1920}
-        loading="lazy"
+        width={1152}
+        height={1614}
+        loading="eager"
+        decoding="async"
         className="game-gallery-image block h-auto w-full"
       />
     </div>

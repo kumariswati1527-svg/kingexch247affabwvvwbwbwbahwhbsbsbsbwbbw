@@ -40,6 +40,10 @@ function CasinoPage() {
         <img
           src={casinoLobby.url}
           alt="Casino lobby"
+          width={2160}
+          height={1288}
+          loading="eager"
+          decoding="async"
           className="h-full w-full object-contain"
         />
       </div>

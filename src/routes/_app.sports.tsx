@@ -17,9 +17,11 @@ function SportsPage() {
       <img
         src={sportsPageImg.url}
         alt="Sports page"
-        width={1080}
-        height={1920}
+        width={1152}
+        height={1760}
         loading="eager"
+        decoding="async"
+        fetchPriority="high"
         className="block h-auto w-full"
       />
     </div>
