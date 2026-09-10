@@ -20,8 +20,10 @@ function HomePage() {
       <img
         src={homeRef.url}
         alt="Home"
-        width={640}
-        height={1136}
+        width={1152}
+        height={1496}
+        decoding="async"
+        fetchPriority="high"
         loading="eager"
         className="game-gallery-image block h-auto w-full"
       />
@@ -32,18 +34,20 @@ function HomePage() {
             <img
               src={homeGames}
               alt="Game cards"
-              width={1080}
-              height={1920}
-              loading="lazy"
+              width={1536}
+              height={2752}
+              loading="eager"
+              decoding="async"
               className="game-gallery-image block h-auto w-full"
             />
 
             <img
               src={moreGames.url}
               alt="More games"
-              width={1080}
-              height={1920}
-              loading="lazy"
+              width={1152}
+              height={1614}
+              loading="eager"
+              decoding="async"
               className="game-gallery-image block h-auto w-full"
             />
           </>

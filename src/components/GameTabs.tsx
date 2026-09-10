@@ -45,9 +45,10 @@ export function GameTabs({ popular }: { popular: ReactNode }) {
           <img
             src={universeOriginal.url}
             alt="Universe Original games — Vimaan, Balloon, Heads & Tails, Dream Catcher, Lucky 0 to 9"
-            width={576}
-            height={526}
-            loading="lazy"
+            width={1152}
+            height={1052}
+            loading="eager"
+            decoding="async"
             className="game-gallery-image block h-auto w-full"
           />
         </div>
@@ -56,17 +57,19 @@ export function GameTabs({ popular }: { popular: ReactNode }) {
           <img
             src={universeLive1.url}
             alt="Universe Live games — 20-20 Teenpatti, Lucky 7, 1 Day Teenpatti, Joker Teenpatti, Dragon Tiger, Baccarat, Andar Bahar, 32 Cards, Poker"
-            width={576}
-            height={773}
-            loading="lazy"
+            width={1152}
+            height={1546}
+            loading="eager"
+            decoding="async"
             className="game-gallery-image block h-auto w-full"
           />
           <img
             src={universeLive2.url}
             alt="More Universe Live games — DTL, 1 Day Dragon Tiger, Muflis Teenpatti, Card Race, Amar Akbar Anthony, Dragon Tiger"
-            width={576}
-            height={511}
-            loading="lazy"
+            width={1152}
+            height={1022}
+            loading="eager"
+            decoding="async"
             className="game-gallery-image block h-auto w-full"
           />
         </div>
