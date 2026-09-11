@@ -54,6 +54,9 @@ function HomePage() {
           </>
         }
       />
+
+      <SectionHeader label="International" />
+      <SectionHeader label="Slot" />
     </div>
   );
 }

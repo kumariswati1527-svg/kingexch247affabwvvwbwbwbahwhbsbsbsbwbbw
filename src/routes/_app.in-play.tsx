@@ -54,6 +54,9 @@ function InPlayPage() {
           </>
         }
       />
+
+      <SectionHeader label="International" />
+      <SectionHeader label="Slot" />
     </div>
   );
 }
