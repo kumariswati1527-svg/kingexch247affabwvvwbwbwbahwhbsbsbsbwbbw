@@ -3,6 +3,7 @@ import inPlayImg from "@/assets/in-play-cropped.jpg";
 import homeGames from "@/assets/home-games-white.jpg";
 import moreGames from "@/assets/more-games.jpg.asset.json";
 import { GameTabs } from "@/components/GameTabs";
+import { SectionHeader } from "@/components/SectionHeader";
 
 export const Route = createFileRoute("/_app/in-play")({
   head: () => ({
@@ -53,6 +54,9 @@ function InPlayPage() {
           </>
         }
       />
+
+      <SectionHeader label="International" />
+      <SectionHeader label="Slot" />
     </div>
   );
 }
