@@ -48,6 +48,9 @@ function LoginPage() {
         <img
           src={kingLogo.url}
           alt="King"
+          width={1012}
+          height={376}
+          decoding="async"
           className="mx-auto w-64 drop-shadow-[0_4px_10px_rgba(0,0,0,0.45)] md:w-72"
         />
       </div>

@@ -86,6 +86,14 @@
 
 .game-gallery-image {
   mix-blend-mode: normal;
+  image-rendering: auto;
+  filter: none;
+  opacity: 1;
+  backface-visibility: hidden;
+}
+
+img {
+  filter: none;
 }
 
 @layer base {
