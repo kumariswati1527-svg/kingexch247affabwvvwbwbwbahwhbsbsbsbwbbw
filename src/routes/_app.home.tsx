@@ -3,6 +3,7 @@ import homeRef from "@/assets/home-ref.jpg.asset.json";
 import homeGames from "@/assets/home-games-white.jpg";
 import moreGames from "@/assets/more-games.jpg.asset.json";
 import { GameTabs } from "@/components/GameTabs";
+import { SectionHeader } from "@/components/SectionHeader";
 
 export const Route = createFileRoute("/_app/home")({
   head: () => ({
